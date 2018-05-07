@@ -1,339 +1,338 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="Content-Security-Policy">
-  <meta charset="utf-8">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="msapplication-tap-highlight" content="no">
-  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="css/index.css">
-  <title>Entalphi calculator</title>
+    <meta http-equiv="Content-Security-Policy">
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>Entalphi calculator</title>
 </head>
 <body onload="OnLoad()">
-  <div class="shapka_home">
-    <a href="indexEN.html">
-    <div class="shapka_vnutr"><img class="homeimage" src="img/house.png" alt="Home"></div></a>
-  </div>
-  <div class="shapka">
-    <a href="index2.html">
-    <div class="subb_select">
-      Entalphy
-    </div></a>
-  </div>
-  <div class="shapka">
-    <a href="index5.html">
-    <div class="shapka_vnutr2">
-      Moisture content
-    </div></a>
-  </div>
-  <div class="app">
-    <div class="blink">
-      <ul>
-        <form>
-          <div class="chart_div">
-            The product's name:
-          </div><select id="name" name="name" required="" size="1">
-            <option>
-              - Select product -
-            </option>
-            <option value="1">
-              Not in the list or unknown
-            </option>
-            <option>
-              apricots
-            </option>
-            <option>
-              quince
-            </option>
-            <option>
-              pineapples
-            </option>
-            <option>
-              oranges
-            </option>
-            <option>
-              watermelons
-            </option>
-            <option>
-              artichokes
-            </option>
-            <option>
-              eggplant
-            </option>
-            <option>
-              bananas
-            </option>
-            <option>
-              lamb above average fatness
-            </option>
-            <option>
-              lamb below the average fatness
-            </option>
-            <option>
-              lamb average fatness
-            </option>
-            <option>
-              pulse
-            </option>
-            <option>
-              broccoli
-            </option>
-            <option>
-              butter a loaf
-            </option>
-            <option>
-              dessert wine
-            </option>
-            <option>
-              fortified wine
-            </option>
-            <option>
-              dry wine
-            </option>
-            <option>
-              grapes
-            </option>
-            <option>
-              cherry
-            </option>
-            <option>
-              water &lt;/ option&gt;
-            </option>
-            <option>
-              beef I category
-            </option>
-            <option>
-              beef II category
-            </option>
-            <option>
-              boiled beef
-            </option>
-            <option>
-              beef bone
-            </option>
-            <option>
-              peas
-            </option>
-            <option>
-              grapefruit
-            </option>
-            <option>
-              mushrooms
-            </option>
-            <option>
-              pear
-            </option>
-            <option>
-              melon
-            </option>
-            <option>
-              milk replacer
-            </option>
-            <option>
-              tom-turkey
-            </option>
-            <option>
-              cocoa with condensed milk and sugar
-            </option>
-            <option>
-              white cabbage
-            </option>
-            <option>
-              brussels cabbage
-            </option>
-            <option>
-              sauerkraut
-            </option>
-            <option>
-              savoy cabbage
-            </option>
-            <option>
-              cauliflower
-            </option>
-            <option>
-              potato
-            </option>
-            <option>
-              fat yogurt 3,2%
-            </option>
-            <option>
-              low-fat yogurt 0%
-            </option>
-            <option>
-              tallinn kefir 1%
-            </option>
-            <option>
-              strawberry
-            </option>
-            <option>
-              cranberry
-            </option>
-            <option>
-              semi-smoked sausages Armavir
-            </option>
-            <option>
-              boiled beef sausage
-            </option>
-            <option>
-              sausage delicacy boiled-smoked
-            </option>
-            <option>
-              sausage diabetic boiled
-            </option>
-            <option>
-              doctoral sausage boiled
-            </option>
-            <option>
-              registered sausage cooked and smoked
-            </option>
-            <option>
-              krasnodar boiled sausage
-            </option>
-            <option>
-              boiled sausage amateur
-            </option>
-            <option>
-              amateur sausage cooked and smoked
-            </option>
-            <option>
-              amateur sausage cooked pork
-            </option>
-            <option>
-              smoked sausage Maikop
-            </option>
-            <option>
-              milk boiled sausage
-            </option>
-            <option>
-              moscow boiled sausage
-            </option>
-            <option>
-              moscow sausage cooked and smoked
-            </option>
-            <option>
-              smoked sausage moscow
-            </option>
-            <option>
-              smoked sausage special
-            </option>
-            <option>
-              semi-smoked sausage poltava
-            </option>
-            <option>
-              rostov sausage cooked and smoked
-            </option>
-            <option>
-              russian boiled sausage
-            </option>
-            <option>
-              sausage sausage cooked and smoked
-            </option>
-          </select><br>
-          <output id="error0"></output>
-          <div id="hidden_div" style="display: none;">
-            <p class="chart_div">Select formula</p><select id="formula" name="formula" required="" size="1">
-              <option>
-                Raul
-              </option>
-              <option>
-                Chizhov
-              </option>
-            </select><br>
-            <div>
-              C<small><small>ryoscopic temperature</small></small>
-            </div><input type="number" class="input" id="crio" onchange="validation()" max="0,01" min="-5"> <output>º С</output><output id="errorCrio"></output><br>
-            <div id="crios" class="chart_div">
-              Limitation [-5 0.01]
-            </div><br>
-            <div>
-              W<small><small>ater content</small></small>
-            </div><input type="number" class="input" id="sod_vodi" onchange="validation()" max="1" min="0"> <output class="textnormal">prop. units</output><output id="errorVoda"></output><br>
-            <div id="vodos" class="chart_div">
-              Limitation [0 1]
-            </div>
-          </div>
-          <script>
-          document.getElementById('name').addEventListener('change', function () {
-          var style = this.value == 1 ? 'block' : 'none';
-          document.getElementById('hidden_div').style.display = style;
-          });
-          </script><br>
-          I<small><small>nitial temperature:</small></small>:<br>
-          <input class="input" id="first" name="firsttemp" onchange="validation();empty();" type="number" max="100" min="-60"> <output>º С</output> <output id="error1"></output><br>
-          <div id="gran1" class="chart_div">
-            Limitation [-60 100]
-          </div>F<small><small>inal temperature:</small></small>:<br>
-          <input class="input" id="last" name="lasttemp" type="number" onchange="validation();empty();" max="100" min="-60"> <output>º С</output> <output id="error2"></output><br>
-          <div id="gran2" class="chart_div">
-            Limitation [-60 100]
-          </div><input type="button" class="out" id="btn" value="Calculate the enthalpy difference"><br>
-          <br>
-          <hr>
-          <output>E<small><small>nthalpy difference</small></small></output> <output class="out" id="vv" name="return"></output><br>
-          <br>
-          <input type="button" onclick="repeat()" value="New calculate"> <input type="button" onclick="go()" value="Continue calculate">
-        </form>
-        <script>
-            function repeat() {
+    <div class="shapka_home">
+        <a href="indexEN.html">
+        <div class="shapka_vnutr"><img class="homeimage" src="img/house.png" alt="Home"></div></a>
+    </div>
+    <div class="shapka">
+        <a href="index2.html">
+        <div class="subb_select">
+            Entalphy
+        </div></a>
+    </div>
+    <div class="shapka">
+        <a href="index5.html">
+        <div class="shapka_vnutr2">
+            Moisture content
+        </div></a>
+    </div>
+    <div class="app">
+        <div class="blink">
+            <ul>
+                <form>
+                    <div class="chart_div">
+                        The product's name:
+                    </div><select id="name" name="name" required="" size="1">
+                        <option>
+                            - Select product -
+                        </option>
+                        <option value="1">
+                            Not in the list or unknown
+                        </option>
+                        <option>
+                            apricots
+                        </option>
+                        <option>
+                            quince
+                        </option>
+                        <option>
+                            pineapples
+                        </option>
+                        <option>
+                            oranges
+                        </option>
+                        <option>
+                            watermelons
+                        </option>
+                        <option>
+                            artichokes
+                        </option>
+                        <option>
+                            eggplant
+                        </option>
+                        <option>
+                            bananas
+                        </option>
+                        <option>
+                            lamb above average fatness
+                        </option>
+                        <option>
+                            lamb below the average fatness
+                        </option>
+                        <option>
+                            lamb average fatness
+                        </option>
+                        <option>
+                            pulse
+                        </option>
+                        <option>
+                            broccoli
+                        </option>
+                        <option>
+                            butter a loaf
+                        </option>
+                        <option>
+                            dessert wine
+                        </option>
+                        <option>
+                            fortified wine
+                        </option>
+                        <option>
+                            dry wine
+                        </option>
+                        <option>
+                            grapes
+                        </option>
+                        <option>
+                            cherry
+                        </option>
+                        <option>
+                            water &lt;/ option&gt;
+                        </option>
+                        <option>
+                            beef I category
+                        </option>
+                        <option>
+                            beef II category
+                        </option>
+                        <option>
+                            boiled beef
+                        </option>
+                        <option>
+                            beef bone
+                        </option>
+                        <option>
+                            peas
+                        </option>
+                        <option>
+                            grapefruit
+                        </option>
+                        <option>
+                            mushrooms
+                        </option>
+                        <option>
+                            pear
+                        </option>
+                        <option>
+                            melon
+                        </option>
+                        <option>
+                            milk replacer
+                        </option>
+                        <option>
+                            tom-turkey
+                        </option>
+                        <option>
+                            cocoa with condensed milk and sugar
+                        </option>
+                        <option>
+                            white cabbage
+                        </option>
+                        <option>
+                            brussels cabbage
+                        </option>
+                        <option>
+                            sauerkraut
+                        </option>
+                        <option>
+                            savoy cabbage
+                        </option>
+                        <option>
+                            cauliflower
+                        </option>
+                        <option>
+                            potato
+                        </option>
+                        <option>
+                            fat yogurt 3,2%
+                        </option>
+                        <option>
+                            low-fat yogurt 0%
+                        </option>
+                        <option>
+                            tallinn kefir 1%
+                        </option>
+                        <option>
+                            strawberry
+                        </option>
+                        <option>
+                            cranberry
+                        </option>
+                        <option>
+                            semi-smoked sausages Armavir
+                        </option>
+                        <option>
+                            boiled beef sausage
+                        </option>
+                        <option>
+                            sausage delicacy boiled-smoked
+                        </option>
+                        <option>
+                            sausage diabetic boiled
+                        </option>
+                        <option>
+                            doctoral sausage boiled
+                        </option>
+                        <option>
+                            registered sausage cooked and smoked
+                        </option>
+                        <option>
+                            krasnodar boiled sausage
+                        </option>
+                        <option>
+                            boiled sausage amateur
+                        </option>
+                        <option>
+                            amateur sausage cooked and smoked
+                        </option>
+                        <option>
+                            amateur sausage cooked pork
+                        </option>
+                        <option>
+                            smoked sausage Maikop
+                        </option>
+                        <option>
+                            milk boiled sausage
+                        </option>
+                        <option>
+                            moscow boiled sausage
+                        </option>
+                        <option>
+                            moscow sausage cooked and smoked
+                        </option>
+                        <option>
+                            smoked sausage moscow
+                        </option>
+                        <option>
+                            smoked sausage special
+                        </option>
+                        <option>
+                            semi-smoked sausage poltava
+                        </option>
+                        <option>
+                            rostov sausage cooked and smoked
+                        </option>
+                        <option>
+                            russian boiled sausage
+                        </option>
+                        <option>
+                            sausage sausage cooked and smoked
+                        </option>
+                    </select><br>
+                    <output id="error0"></output>
+                    <div id="hidden_div" style="display: none;">
+                        <p class="chart_div">Select formula</p><select id="formula" name="formula" required="" size="1">
+                            <option>
+                                Raul
+                            </option>
+                            <option>
+                                Chizhov
+                            </option>
+                        </select><br>
+                        <div>
+                            C<small><small>ryoscopic temperature</small></small>
+                        </div><input type="number" class="input" id="crio" onchange="validation()" max="0,01" min="-5"> <output>º С</output><output id="errorCrio"></output><br>
+                        <div id="crios" class="chart_div">
+                            Limitation [-5 0.01]
+                        </div><br>
+                        <div>
+                            W<small><small>ater content</small></small>
+                        </div><input type="number" class="input" id="sod_vodi" onchange="validation()" max="1" min="0"> <output class="textnormal">prop. units</output><output id="errorVoda"></output><br>
+                        <div id="vodos" class="chart_div">
+                            Limitation [0 1]
+                        </div>
+                    </div>
+                    <script>
+                    document.getElementById('name').addEventListener('change', function () {
+                    var style = this.value == 1 ? 'block' : 'none';
+                    document.getElementById('hidden_div').style.display = style;
+                    });
+                    </script><br>
+                    I<small><small>nitial temperature:</small></small>:<br>
+                    <input class="input" id="first" name="firsttemp" onchange="validation();empty();" type="number" max="100" min="-60"> <output>º С</output> <output id="error1"></output><br>
+                    <div id="gran1" class="chart_div">
+                        Limitation [-60 100]
+                    </div>F<small><small>inal temperature:</small></small>:<br>
+                    <input class="input" id="last" name="lasttemp" type="number" onchange="validation();empty();" max="100" min="-60"> <output>º С</output> <output id="error2"></output><br>
+                    <div id="gran2" class="chart_div">
+                        Limitation [-60 100]
+                    </div><input type="button" class="out" id="btn" value="Calculate the enthalpy difference"><br>
+                    <br>
+                    <hr>
+                    <output>E<small><small>nthalpy difference</small></small></output> <output class="out" id="vv" name="return"></output><br>
+                    <br>
+                    <input type="button" onclick="repeat()" value="New calculate"> <input type="button" onclick="go()" value="Continue calculate">
+                </form>
+                <script>
+                function repeat() {
                 document.location = "index2.html";
-            }
-        </script>
-        <script>
-            function go() {
+                }
+                </script>
+                <script>
+                function go() {
                 document.location = "index5.html?id=" + document.getElementById("vv").value;
-            }
-        </script>
-      </ul>
-      <script type="text/javascript" src="js/loader.js"></script> 
-      <script type="text/javascript">
+                }
+                </script>
+            </ul>
+            <script type="text/javascript" src="js/loader.js"></script> 
+            <script type="text/javascript">
 
 
-        google.charts.load('current', {packages: ['corechart', 'line']});
-      google.charts.setOnLoadCallback(drawLineColors);
-      function drawLineColors() {
-      var data = new google.visualization.DataTable();
-      data.addColumn('number', 'K');
-      data.addColumn('number', 'H');
-          //первая линия
-          data.addColumn({id:'i0',type:'number', role:'interval'});  // interval role col.
-          data.addColumn({id:'i0',type:'number', role:'interval'});  // interval role col.
-          //вторая линия
-          data.addColumn({id:'i1',type:'number', role:'interval'});  // interval role col.
-          data.addColumn({id:'i0',type:'number', role:'interval'});  // interval role col.
-        
-          var beta=finish();
-      data.addRows(beta);
 
-      var options = {
-        hAxis: {
-          title: 't, °C'
-        },
-        vAxis: {
-          title: 'h, kJ / kg'
-        },
-        colors: [ 'orange'],
-         interval: {
+            google.charts.load('current', {packages: ['corechart', 'line']});
+            google.charts.setOnLoadCallback(drawLineColors);
+            function drawLineColors() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('number', 'K');
+            data.addColumn('number', 'H');
+            //первая линия
+            data.addColumn({id:'i0',type:'number', role:'interval'});  // interval role col.
+            data.addColumn({id:'i0',type:'number', role:'interval'});  // interval role col.
+            //вторая линия
+            data.addColumn({id:'i1',type:'number', role:'interval'});  // interval role col.
+            data.addColumn({id:'i0',type:'number', role:'interval'});  // interval role col.
+
+            var beta=finish();
+            data.addRows(beta);
+
+            var options = {
+            hAxis: {
+            title: 't, °C'
+            },
+            vAxis: {
+            title: 'h, kJ / kg'
+            },
+            colors: [ 'orange'],
+            interval: {
             'i0': {  'style': 'sticks' , 'color':'blue'},
             'i1': {  'style': 'sticks' , 'color':'red'},
             },
-      legend: 'none'
+            legend: 'none'
                 
-      };
+            };
+            var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+            beta="";
 
-      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-      chart.draw(data, options);
-          beta="";
-          
-      }
-      </script>
-      <div id="chart_div" class="chart_div"></div>
-      <script type="text/javascript" src="js/math_en.js"></script> 
-      <script>
-
-      document.getElementById("btn").onclick=function(){finish();Name_Product();drawLineColors();};
-      </script>
+            }
+            </script>
+            <div id="chart_div" class="chart_div"></div>
+            <script type="text/javascript" src="js/math_en.js"></script> 
+            <script>
+            document.getElementById("btn").onclick=function(){finish();Name_Product();drawLineColors();};
+            </script>
+        </div>
+        <script type="text/javascript" src="js/index.js"></script>
     </div>
-    <script type="text/javascript" src="js/index.js"></script>
-  </div>
 </body>
 </html>
