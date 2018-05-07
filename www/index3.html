@@ -1,211 +1,342 @@
 <!DOCTYPE html>
-
 <html>
-    <head>
-<meta http-equiv="Content-Security-Policy"/>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Calculatorul entalpii</title>
-    </head>
-    <body>
-	<div class="shapka_home" >
-			
-				<a  href="indexMD.html">
-					<div class="shapka_vnutr"><img class="homeimage" src="img/house.png"  /> 	</div>
-				</a ></div>
-				<div class="shapka">
-				<a  href="index3.html">
-					<div class="subb_select">Entalpii 	</div>
-				</a >
-		 </div>	
-		 <div class="shapka">
-				<a  href="index6.html">
-					<div class="shapka_vnutr2">Conținutul de umiditate 	</div>
-				</a >
-		 </div>	
+<head>
+    <meta http-equiv="Content-Security-Policy">
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>Calculatorul entalpii</title>
+</head>
+<body onload="OnLoad()">
+    <div class="shapka_home">
+        <a href="indexMD.html">
+        <div class="shapka_vnutr"><img class="homeimage" src="img/house.png" alt="Home"></div></a>
+    </div>
+    <div class="shapka">
+        <a href="index3.html">
+        <div class="subb_select">
+            Entalpii
+        </div></a>
+    </div>
+    <div class="shapka">
+        <a href="index6.html">
+        <div class="shapka_vnutr2">
+            Conținutul de umiditate
+        </div></a>
+    </div>
+    <div class="app">
+        <div class="blink">
+            <ul>
+                <form>
+                    <div class="chart_div">
+                        Denumirea produsului
+                    </div><select class="select" id="name" name="name" required="" size="1">
+                        <option>
+                            - Selectați produsul -
+                        </option>
+                        <option value="1">
+                            Nu este în listă sau necunoscut
+                        </option>
+                        <option>
+                            caise
+                        </option>
+                        <option>
+                            gutuie
+                        </option>
+                        <option>
+                            ananasul
+                        </option>
+                        <option>
+                            portocale
+                        </option>
+                        <option>
+                            pepeni verzi
+                        </option>
+                        <option>
+                            anghinare
+                        </option>
+                        <option>
+                            vânătă
+                        </option>
+                        <option>
+                            banane
+                        </option>
+                        <option>
+                            miel peste medie adipozitate
+                        </option>
+                        <option>
+                            miel sub media ingrasarea
+                        </option>
+                        <option>
+                            miel adipozitate medie
+                        </option>
+                        <option>
+                            puls
+                        </option>
+                        <option>
+                            broccoli
+                        </option>
+                        <option>
+                            pâine fantezie
+                        </option>
+                        <option>
+                            vin de desert
+                        </option>
+                        <option>
+                            vin alcoolizat
+                        </option>
+                        <option>
+                            vin sec
+                        </option>
+                        <option>
+                            struguri
+                        </option>
+                        <option>
+                            vișina
+                        </option>
+                        <option>
+                            apă
+                        </option>
+                        <option>
+                            carne de vită categoria I
+                        </option>
+                        <option>
+                            carne de vită categoria II
+                        </option>
+                        <option>
+                            vită fiartă
+                        </option>
+                        <option>
+                            carne de vită os
+                        </option>
+                        <option>
+                            mazăre
+                        </option>
+                        <option>
+                            grapefruitul
+                        </option>
+                        <option>
+                            ciuperci
+                        </option>
+                        <option>
+                            pere
+                        </option>
+                        <option>
+                            pepeni galbeni
+                        </option>
+                        <option>
+                            întregul înlocuitor de lapte
+                        </option>
+                        <option>
+                            curcan
+                        </option>
+                        <option>
+                            cacao cu lapte condensat și zahăr
+                        </option>
+                        <option>
+                            varză albă
+                        </option>
+                        <option>
+                            varză de brusell
+                        </option>
+                        <option>
+                            varză acră
+                        </option>
+                        <option>
+                            varză creață
+                        </option>
+                        <option>
+                            conopidă
+                        </option>
+                        <option>
+                            cartofi
+                        </option>
+                        <option>
+                            chefir de grăsime 3,2%
+                        </option>
+                        <option>
+                            scăzut de grăsimi chefir 0%
+                        </option>
+                        <option>
+                            chefir tallinn 1%
+                        </option>
+                        <option>
+                            căpșune
+                        </option>
+                        <option>
+                            merișor
+                        </option>
+                        <option>
+                            mezeluri semi-afumate armavir
+                        </option>
+                        <option>
+                            cârnați de vită gătită
+                        </option>
+                        <option>
+                            cârnați delicatețe fierte afumate
+                        </option>
+                        <option>
+                            fierte diabetici mezeluri
+                        </option>
+                        <option>
+                            fierte doctorat mezeluri
+                        </option>
+                        <option>
+                            cârnați, afumate fierte înregistrat
+                        </option>
+                        <option>
+                            mezeluri fierte krasnodar
+                        </option>
+                        <option>
+                            cârnați fierte amatori
+                        </option>
+                        <option>
+                            mezeluri fierte si afumate amatori
+                        </option>
+                        <option>
+                            amatori mezeluri fierte carne de porc
+                        </option>
+                        <option>
+                            afumat maikop mezeluri
+                        </option>
+                        <option>
+                            mezeluri de lapte fierte
+                        </option>
+                        <option>
+                            mezeluri moscova fierte
+                        </option>
+                        <option>
+                            mezeluri moscova fierte si afumate
+                        </option>
+                        <option>
+                            mezeluri afumate moscova
+                        </option>
+                        <option>
+                            afumat de construcții mezeluri
+                        </option>
+                        <option>
+                            mezeluri semi-afumate poltava
+                        </option>
+                        <option>
+                            mezeluri rostov fierte și afumate
+                        </option>
+                        <option>
+                            mezeluri fierte rus
+                        </option>
+                        <option>
+                            mezeluri fierte și afumate cârnați
+                        </option>
+                    </select><br>
+                    <output id="error0"></output>
+                    <div id="hidden_div" style="display: none;">
+                        <p class="chart_div">Selectați formula <select id="formula" name="formula" required="" size="1">
+                            <option>
+                                Raul
+                            </option>
+                            <option>
+                                Cijov
+                            </option>
+                        </select><br></p>
+                        <div>
+                            T<small><small>emperatura cryoscopica</small></small>
+                        </div><input type="number" class="input" id="crio" onchange="validation()" max="0,01" min="-5"> <output>º С</output><output id="errorCrio"></output><br>
+                        <div id="crios" class="chart_div">
+                            Restricție [-5 0.01]
+                        </div><br>
+                        <div>
+                            C<small><small>onținut de apă</small></small>
+                        </div><input type="number" class="input" id="sod_vodi" onchange="validation()" max="1" min="0"> <output class="textnormal">Unități</output><output id="errorVoda"></output><br>
+                        <div id="vodos" class="chart_div">
+                            Restricție [0 1]
+                        </div>
+                    </div>
+                    <script>
+                    document.getElementById('name').addEventListener('change', function () {
+                    var style = this.value == 1 ? 'block' : 'none';
+                    document.getElementById('hidden_div').style.display = style;
+                    });
+                    </script><br>
+                    T<small><small>emperatură inițială:</small></small>:<br>
+                    <input class="input" id="first" name="firsttemp" type="number" onchange="validation();empty();" max="100" min="-60"> <output>º С</output> <output id="error1"></output><br>
+                    <div id="gran1" class="chart_div">
+                        Restricție [-60 100]
+                    </div>T<small><small>emperatură finală:</small></small>:<br>
+                    <input class="input" id="last" name="lasttemp" type="number" onchange="validation();empty();" max="100" min="-60"> <output>º С</output> <output id="error2"></output><br>
+                    <div id="gran2" class="chart_div">
+                        Restricție [-60 100]
+                    </div><input type="button" class="out" id="btn" value="A calcula diferența entalpii"><br>
+                    <br>
+                    <hr>
+                    <!--<div>D<small><small>enumirea produsului</small></small></div>       
+                                                        <input class="out" id="name_prod" name="return" readonly><br><br>-->
+                    <div>
+                        D<small><small>iferența entalpii</small></small>
+                    </div><input class="out" id="vv" name="return" readonly><br>
+                    <br>
+                    <input type="button" onclick="repeat()" value="Nou calcul"> <input type="button" onclick="go()" value="Prelungirea calcularii">
+                </form>
+                <script>
+                function go() {
+                document.location = "index6.html?id=" + document.getElementById("vv").value;
+                }
+                </script>
+                <script>
+                function repeat() {
+                document.location = "index3.html";
+                }
+                </script>
+            </ul>
+            <script type="text/javascript" src="js/loader.js"></script> 
+            <script type="text/javascript">
 
-	        <div class="app" >
-            <div class="blink">
-                	<ul>  
-							<form>
-							<div class="chart_div">Denumirea produsului</div>
-								<select class="select" type="text" id="name" name="name" required value="" size="1"><br>
-								<option > - Selectați produsul -</option>
-								<option value="1">Nu este în listă sau necunoscut</option>
-									 <option >caise</option>
-									 <option >gutuie</option>
-									 <option >ananasul</option>
-									 <option >portocale</option>
-									 <option >pepeni verzi</option>
-									 <option >anghinare</option>
-									 <option >vânătă</option>
-									 <option >banane</option>
-									 <option >miel peste medie adipozitate</option>
-									 <option >miel sub media ingrasarea</option>
-									 <option >miel adipozitate medie</option>
-									 <option >puls</option>
-									 <option >broccoli</option>
-									 <option >pâine fantezie</option>
-									 <option >vin de desert</option>
-									 <option >vin alcoolizat</option>
-									 <option >vin sec</option>
-									 <option >struguri</option>
-									 <option >vișina</option>
-									 <option >apă</option>
-									 <option >carne de vită categoria I</option>
-									 <option >carne de vită categoria II</option>
-									 <option >vită fiartă</option>
-									 <option >carne de vită os</option>
-									 <option >mazăre</option>
-									 <option >grapefruitul</option>
-									 <option >ciuperci</option>
-									 <option >pere</option>
-									 <option >pepeni galbeni</option>
-									 <option >întregul înlocuitor de lapte</option>
-									 <option >curcan</option>
-									 <option >cacao cu lapte condensat și zahăr</option>
-									 <option >varză albă</option>
-									 <option >varză de brusell</option>
-									 <option >varză acră</option>
-									 <option >varză creață</option>
-									 <option >conopidă</option>
-									 <option >cartofi</option>
-									 <option >chefir de grăsime 3,2%</option>
-									 <option >scăzut de grăsimi chefir 0%</option>
-									 <option >chefir tallinn 1%</option>
-									 <option >căpșune</option>
-									 <option >merișor</option>
-									 <option >mezeluri semi-afumate armavir</option>
-									 <option >cârnați de vită gătită</option>
-									 <option >cârnați delicatețe fierte afumate</option>
-									 <option >fierte diabetici mezeluri</option>
-									 <option >fierte doctorat mezeluri</option>
-									 <option >cârnați, afumate fierte înregistrat</option>
-									 <option >mezeluri fierte krasnodar</option>
-									 <option >cârnați fierte amatori</option>
-									 <option >mezeluri fierte si afumate amatori</option>
-									 <option >amatori mezeluri fierte carne de porc</option>
-									 <option >afumat maikop mezeluri</option>
-									 <option >mezeluri de lapte fierte</option>
-									 <option >mezeluri moscova fierte</option>
-									 <option >mezeluri moscova fierte si afumate</option>
-									 <option >mezeluri afumate moscova</option>
-									 <option >afumat de construcții mezeluri</option>
-									 <option >mezeluri semi-afumate poltava</option>
-									 <option >mezeluri rostov fierte și afumate</option>
-									 <option >mezeluri fierte rus</option>
-									 <option >mezeluri fierte și afumate cârnați</option>
-									
-								</select><br>
-								<output id="error0"></output>
-	<div id="hidden_div" style="display: none;"><p>
-<p class="chart_div">Selectați formula
 
-<select type="text" id="formula" name="formula" required value="" size="1"><br>
-									 <option >Raul</option>
-									 <option >Cijov</option>
-									 </select>
-	<br><div>T<small><small>emperatura cryoscopica</small></small></div>
-  <input type="number" class="input" id="crio" onchange="validation()" max="0,01" min="-5"><output> &ordm С</output><output id="errorCrio"></output><br><div id="crios" class="chart_div">Ограничение  [-5  0.01]</div><br>
-	<div>C<small><small>onținut de apă</small></small></div>
-  <input type="number" class="input" id="sod_vodi" onchange="validation()" max="1" min="0"><output class="textnormal"> Unități</output><output id="errorVoda"></output><br><div id="vodos" class="chart_div">Ограничение  [0   1]</div>
-	</div>
 
-<script>
-document.getElementById('name').addEventListener('change', function () {
-    var style = this.value == 1 ? 'block' : 'none';
-    document.getElementById('hidden_div').style.display = style;
-});
-</script>
-							<br>T<small><small>emperatură inițială:</small></small>:<br>
-								<input class="input"  id="first" name="firsttemp" type="number" onchange="validation();empty();" max="100" min="-60" > <output> &ordm С</output><output id="error1"> </output><br>
-								<div id="gran1" class="chart_div">Restricție  [-60   100]</div>
-											
-	 						T<small><small>emperatură finală:</small></small>:<br>
-								<input  class="input" id="last" name="lasttemp" type="number" onchange="validation();empty();" max="100" min="-60"><output> &ordm С</output><output id="error2"> </output><br>
-									<div id="gran2" class="chart_div">Restricție  [-60   100]</div>
-									
-							
-						<input type="button" class="out" id="btn" value="A calcula diferența entalpii"><br><br>
-						<hr>
-						<!--<div>D<small><small>enumirea produsului</small></small></div>	
-							<input class="out" id="name_prod" name="return" readonly><br><br>-->
-				
-						<div>D<small><small>iferența entalpii</small></small></div>			
-							<input  class="out" id="vv" name="return" readonly><br><br>
-							<input type="button" onclick="repeat()" value="Nou calcul"></input><input type="button" onclick="go()" value="Prelungirea calcularii"></input>
-						</form>  
-							<script>
-							function go() {
-							document.location = "index6.html?id=" + document.getElementById("vv").value;
-							}
-							</script>
-							<script>
-							function repeat() {
-							document.location = "index3.html";
-							}
-							</script>
-						</ul>
-				
-						<script type="text/javascript" src="js/loader.js"></script>
-    <script type="text/javascript">
-	google.charts.load('current', {packages: ['corechart', 'line']});
-google.charts.setOnLoadCallback(drawLineColors);
-     function drawLineColors() {
-      var data = new google.visualization.DataTable();
-      data.addColumn('number', 'K');
-      data.addColumn('number', 'H');
-	  //первая линия
-	  data.addColumn({id:'i0',type:'number', role:'interval'});  // interval role col.
-	  data.addColumn({id:'i0',type:'number', role:'interval'});  // interval role col.
-	  //вторая линия
-	  data.addColumn({id:'i1',type:'number', role:'interval'});  // interval role col.
-	  data.addColumn({id:'i0',type:'number', role:'interval'});  // interval role col.
-	
-	  var beta=finish();
-      data.addRows(beta);
+            google.charts.load('current', {packages: ['corechart', 'line']});
+            google.charts.setOnLoadCallback(drawLineColors);
+            function drawLineColors() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('number', 'K');
+            data.addColumn('number', 'H');
+            //первая линия
+            data.addColumn({id:'i0',type:'number', role:'interval'});  // interval role col.
+            data.addColumn({id:'i0',type:'number', role:'interval'});  // interval role col.
+            //вторая линия
+            data.addColumn({id:'i1',type:'number', role:'interval'});  // interval role col.
+            data.addColumn({id:'i0',type:'number', role:'interval'});  // interval role col.
 
-      var options = {
-        hAxis: {
-          title: 't, °C'
-        },
-        vAxis: {
-          title: 'h, kJ/kg'
-        },
-        colors: [ 'orange'],
-         interval: {
+            var beta=finish();
+            data.addRows(beta);
+
+            var options = {
+            hAxis: {
+            title: 't, °C'
+            },
+            vAxis: {
+            title: 'h, kJ/kg'
+            },
+            colors: [ 'orange'],
+            interval: {
             'i0': {  'style': 'sticks' , 'color':'blue'},
             'i1': {  'style': 'sticks' , 'color':'red'},
             },
-      legend: 'none'
-		
-      };
+            legend: 'none'
+                
+            };
+            var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+            beta="";
 
-      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-      chart.draw(data, options);
-	  beta="";
-	  
-    }
-    </script>
-						<div id="chart_div" class="chart_div"></div>
-
-						
-		<script type="text/javascript" src="js/math_ro.js"></script>
-<script>
-
-document.getElementById("btn").onclick=function(){finish();Name_Product();drawLineColors();};
-									</script>
-					
-					
+            }
+            </script>
+            <div id="chart_div" class="chart_div"></div>
+            <script type="text/javascript" src="js/math_ro.js"></script> 
+            <script>
+            document.getElementById("btn").onclick=function(){finish();Name_Product();drawLineColors();};
+            </script>
         </div>
-        
         <script type="text/javascript" src="js/index.js"></script>
-        
-		</div>
-		
-    </body>
-	
+    </div>
+</body>
 </html>
