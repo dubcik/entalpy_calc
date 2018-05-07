@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.entalpy_calc" version="1.0.0" xmlns="http://www.w3.org/ns/widgets">
-    <name>entalpy_calc</name>
+    <name>Entalpy Calculator</name>
     <description />
     <author email="andrei_dubovoi@mail.ru">Dubovoi Andrei</author>
     <content src="index.html" />
